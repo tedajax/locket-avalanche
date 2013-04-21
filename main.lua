@@ -14,9 +14,9 @@ function love.keypressed(key, unicode)
 end
 
 function love.update(dt)
-	go:update()
+	go:req_update(dt)
 end
 
 function love.draw()
-	go:render()
+	go:req_render()
 end
