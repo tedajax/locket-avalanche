@@ -1,9 +1,18 @@
 require 'locket.locket'
 
 function love.load()
+	local faceimg = love.graphics.newImage("assets/face.png")
+
 	go = GameObject()
 	go:add_component("CPositionable")
-	go:add_component("CRenderCircle")
+	go:add_component("CRotatable")
+	local align = go:add_component("CAlignable")
+	align.alignment = "center"
+	go:add_component("CColorable")
+	local sprite = go:add_component("CSpriteRenderer")
+	sprite:set_image(faceimg)
+	go:add_component("CSpinner")
+	
 	go:start()
 end
 
