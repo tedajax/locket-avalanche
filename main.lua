@@ -1,4 +1,10 @@
+require 'locket.locket'
+
 function love.load()
+	go = GameObject()
+	go:add_component("CPositionable")
+	go:add_component("CRenderCircle")
+	go:start()
 end
 
 function love.keypressed(key, unicode)
@@ -8,9 +14,9 @@ function love.keypressed(key, unicode)
 end
 
 function love.update(dt)
-
+	go:update()
 end
 
-function love.render()
-
+function love.draw()
+	go:render()
 end
